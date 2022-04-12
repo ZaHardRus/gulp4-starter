@@ -1,10 +1,9 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync'
-
 //Конфиг
 import path from './config/path.js'
 import settings from "./config/settings.js";
-
+//Задачи
 import clear from './tasks/clear.js';
 import html from './tasks/html.js';
 import scss from './tasks/scss.js';
@@ -13,7 +12,6 @@ import images from './tasks/images.js';
 import fonts from './tasks/fonts.js';
 //const css = require('./tasks/css');
 //const pug = require('./tasks/pug');
-
 
 const server = () => {
     browserSync.init({
@@ -31,6 +29,7 @@ const watcher = () => {
     gulp.watch(path.images.watch, images).on("all", browserSync.reload)
     gulp.watch(path.fonts.watch, fonts).on("all", browserSync.reload)
     //gulp.watch(path.pug.watch,pug).on("all",browserSync.reload)
+    //gulp.watch(path.css.watch,css).on("all",browserSync.reload)
 }
 
 export {script, html, scss, clear, images, fonts}

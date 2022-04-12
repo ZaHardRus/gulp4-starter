@@ -1,4 +1,5 @@
 import del from 'del';
+
 //Конфиг
 import path from '../config/path.js';
 

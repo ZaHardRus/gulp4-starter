@@ -16,6 +16,7 @@ import settings from "../config/settings.js";
 
 const sass = gulpsass(sassComp)
 
+
 const scss = () => {
     return gulp
         .src(path.scss.src, {sourcemaps: settings.isDev})
@@ -32,5 +33,4 @@ const scss = () => {
         .pipe(csso())
         .pipe(gulp.dest(path.scss.dest, {sourcemaps: true}))
 }
-
 export default scss;

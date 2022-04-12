@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp",
-    "build": "gulp --production"
+    "start": "gulp --experimental-json-modules",
+    "build": "gulp --production --experimental-json-modules"
   },
   "browserslist": [
     "last 3 versions"

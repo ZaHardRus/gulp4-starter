@@ -9,7 +9,6 @@ import csso from 'gulp-csso'
 import rename from 'gulp-rename'
 import groupMedia from 'gulp-group-css-media-queries'
 import webpCss from 'gulp-webp-css'
-
 //Конфиг
 import path from '../config/path.js';
 import settings from "../config/settings.js";

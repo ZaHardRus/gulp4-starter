@@ -2,7 +2,6 @@ import gulp from 'gulp';
 //Plugins
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-
 import gulpPug from 'gulp-pug';
 import webpHtml from 'gulp-webp-html'
 //Конфиг
