@@ -1,0 +1,11 @@
+@import './blocks/*.scss';
+@import './mixin.scss';
+$base-font-size:44px;
+$base-color:rgb(116, 204, 204);
+
+body{
+    @include ph {
+        background-color: $base-color;
+        font-size: $base-font-size;
+    }
+}

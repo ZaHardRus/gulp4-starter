@@ -1,0 +1,6 @@
+@import '../mixin.scss';
+.title{
+    @include ph {
+        background-color: red;
+    }
+}

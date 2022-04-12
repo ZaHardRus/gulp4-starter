@@ -1,0 +1,9 @@
+extends layout/app
+
+block page
+    include chunk/header
+    h1 lol
+    ul
+        each item in news
+            li=item.title 
+    include chunk/footer

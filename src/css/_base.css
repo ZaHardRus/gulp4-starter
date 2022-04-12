@@ -1,0 +1,6 @@
+*{
+    box-sizing: border-box;
+}
+
+@import "./components/_footer.css";
+@import "./components/_header.css";
