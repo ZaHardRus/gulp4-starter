@@ -1,32 +1,36 @@
-const gulp = require('gulp');
-
+import gulp from 'gulp';
 //Plugins
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const autoprefixer = require('gulp-autoprefixer')
-const csso = require('gulp-csso')
-const rename = require('gulp-rename')
-const groupMedia = require('gulp-group-css-media-queries')
-const sass = require('gulp-sass')(require('sass'))
-const sassGlob = require('gulp-sass-glob')
-
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+import autoprefixer from 'gulp-autoprefixer'
+import csso from 'gulp-csso'
+import rename from 'gulp-rename'
+import groupMedia from 'gulp-group-css-media-queries'
+import gulpsass from 'gulp-sass'
+import sassComp from 'sass'
+import sassGlob from 'gulp-sass-glob'
+import webpCss from 'gulp-webp-css'
 //Конфиг
-const path = require('../config/path');
+import path from '../config/path.js'
+import settings from "../config/settings.js";
+
+const sass = gulpsass(sassComp)
 
 const scss = () => {
     return gulp
-        .src(path.scss.src,{sourcemaps:true})
+        .src(path.scss.src, {sourcemaps: settings.isDev})
         .pipe(plumber({
-            errorHandler:notify.onError()
+            errorHandler: notify.onError()
         }))
         .pipe(sassGlob())
         .pipe(sass())
+        .pipe(webpCss())
         .pipe(autoprefixer())
         .pipe(groupMedia())
-        .pipe(gulp.dest(path.css.dest,{sourcemaps:true}))
-        .pipe(rename({suffix:".min"}))
+        .pipe(gulp.dest(path.css.dest, {sourcemaps: settings.isDev}))
+        .pipe(rename({suffix: ".min"}))
         .pipe(csso())
-        .pipe(gulp.dest(path.scss.dest,{sourcemaps:true}))
+        .pipe(gulp.dest(path.scss.dest, {sourcemaps: true}))
 }
 
-module.exports = scss;
+export default scss;

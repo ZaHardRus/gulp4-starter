@@ -5,7 +5,8 @@ $base-color:rgb(116, 204, 204);
 
 body{
     @include ph {
-        background-color: $base-color;
+        background-image: url(../assets/images/FO34qZ4XsAovAdD.png);
+        //background-color: $base-color;
         font-size: $base-font-size;
     }
 }

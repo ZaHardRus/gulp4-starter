@@ -1,27 +1,26 @@
-const gulp = require('gulp');
-
+import gulp from 'gulp';
 //Plugins
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const webpack = require('webpack-stream');
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+import babel from 'gulp-babel';
+import uglify from 'gulp-uglify';
+import webpack from 'webpack-stream';
 
 
 //Конфиг
-const path = require('../config/path');
-const settings = require('../config/settings');
+import path from '../config/path.js';
+import settings from '../config/settings.js';
 
 const script = () => {
     return gulp
-        .src(path.js.src,{sourcemaps:true})
+        .src(path.js.src,{sourcemaps:settings.isDev})
         .pipe(plumber({
             errorHandler:notify.onError()
         }))
         .pipe(babel())
         .pipe(webpack(settings.webpack))
         .pipe(uglify())
-        .pipe(gulp.dest(path.js.dest,{sourcemaps:true}))
+        .pipe(gulp.dest(path.js.dest,{sourcemaps:settings.isDev}))
 }
 
-module.exports = script;
+export default script;

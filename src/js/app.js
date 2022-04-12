@@ -1,2 +1,2 @@
-import {f1} from './modules/f1'
+import {f1} from './modules/f1.js'
 console.log(f1())

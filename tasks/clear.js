@@ -1,9 +1,8 @@
-const del = require('del');
+import del from 'del';
 //Конфиг
-const path = require('../config/path');
+import path from '../config/path.js';
 
 const clear = () => {
     return del(path.root);
 }
-
-module.exports = clear;
+export default clear

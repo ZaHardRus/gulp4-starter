@@ -1,15 +1,17 @@
-const gulp = require('gulp');
-
+import gulp from 'gulp';
 //Plugins
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+
+import imagemin from 'gulp-imagemin';
+import newer from 'gulp-newer';
+import webp from 'gulp-webp'
+import gulpif from 'gulp-if'
 
 
 //Конфиг
-const path = require('../config/path');
-const settings = require('../config/settings');
+import path from '../config/path.js';
+import settings from '../config/settings.js';
 
 const images = () => {
     return gulp
@@ -18,9 +20,12 @@ const images = () => {
             errorHandler:notify.onError()
         }))
         .pipe(newer(path.images.dest))
-        .pipe(imagemin(settings.imagemin))
-
+        .pipe(webp())
+        .pipe(gulp.dest(path.images.dest))
+        .pipe(gulp.src(path.images.src))
+        .pipe(newer(path.images.dest))
+        .pipe(gulpif(settings.isProd,imagemin(settings.imagemin)))
         .pipe(gulp.dest(path.images.dest))
 }
 
-module.exports = images;
+export default images;

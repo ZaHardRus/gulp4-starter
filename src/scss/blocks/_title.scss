@@ -1,6 +1,7 @@
 @import '../mixin.scss';
 .title{
+    background-image: url(../assets/images/photo_2021-12-29_15-39-16.jpg);
     @include ph {
-        background-color: red;
+        background-color: green;
     }
 }

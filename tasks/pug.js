@@ -1,21 +1,23 @@
-const gulp = require('gulp');
-
+import gulp from 'gulp';
 //Plugins
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const gulpPug = require('gulp-pug');
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+
+import gulpPug from 'gulp-pug';
+import webpHtml from 'gulp-webp-html'
 //Конфиг
-const path = require('../config/path');
-const settings = require('../config/settings');
+import path from '../config/path.js';
+import settings from '../config/settings.js';
 
 const pug = () => {
     return gulp
         .src(path.pug.src)
         .pipe(plumber({
-            errorHandler:notify.onError()
+            errorHandler: notify.onError()
         }))
         .pipe(gulpPug(settings.pug))
+        .pipe(webpHtml())
         .pipe(gulp.dest('./public'))
 }
 
-module.exports = pug;
+export default pug;

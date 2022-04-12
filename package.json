@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp",
+    "build": "gulp --production"
   },
   "browserslist": [
     "last 3 versions"
@@ -24,8 +27,10 @@
     "gulp-cssimport": "^7.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-file-include": "^2.3.0",
+    "gulp-fonter": "^0.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "^8.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
@@ -35,7 +40,11 @@
     "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-size": "^4.0.1",
+    "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-css": "^1.1.0",
+    "gulp-webp-html": "^1.0.2",
     "sass": "^1.50.0",
     "webpack": "^5.72.0",
     "webpack-stream": "^7.0.0"
