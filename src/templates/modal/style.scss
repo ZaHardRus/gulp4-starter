@@ -1,0 +1,32 @@
+.modal__wrapper{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#1B1B1B,.95);
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    display: none;
+    .modal{
+      background-color: #1F1F1F;
+      padding: 25px;
+      border-radius: 16px;
+      height: 300px;
+      width: 350px;
+      &__title{
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        color:#fff;
+      }
+      &__close{
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
