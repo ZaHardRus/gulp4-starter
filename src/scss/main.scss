@@ -1,12 +1,34 @@
-
-@import './mixin.scss';
+@import './_mixin.scss';
+@import './_variables.scss';
 $base-font-size:44px;
 $base-color:rgb(116, 204, 204);
 
-body{
-    @include ph {
-        background-image: url(../assets/images/FO34qZ4XsAovAdD.png);
-        //background-color: $base-color;
-        font-size: $base-font-size;
-    }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
 }
+body{
+    background-color: azure;
+}
+ul {
+    list-style: none;
+    li {
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+  .container {
+    max-width: $mv + px;
+    margin: 0 auto;
+    width: 100%;
+    @media (max-width: $md1) {
+      max-width: 970px;
+    }
+    @media (max-width: $md2) {
+      max-width: 750px;
+    }
+  }
