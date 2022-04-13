@@ -1,17 +1,33 @@
+// X-Large devices (large desktops, less than 1400px)
+@mixin xlg {
+    @media(max-width: 1399.98px){
+        @content
+    }
+};
+
+// Large devices (desktops, less than 1200px)
 @mixin lg {
-    @media(max-width:992px){
+    @media(max-width: 1199.98px){
         @content
     }
 };
 
+// Medium devices (tablets, less than 992px)
 @mixin md {
-    @media(max-width:768px){
+    @media(max-width: 991.98px){
         @content
     }
 };
 
+// Small devices (landscape phones, less than 768px)
 @mixin sm {
-    @media(max-width:576px){
+    @media(max-width: 767.98px){
+        @content
+    }
+};
+// X-Small devices (portrait phones, less than 576px)
+@mixin xsm {
+    @media(max-width: 575.98px){
         @content
     }
 }
