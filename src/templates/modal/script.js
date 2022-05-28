@@ -5,7 +5,6 @@
 
     trigger.addEventListener('click',e=>{
         e.preventDefault()
-        console.log(123)
         modal.style.display = "flex"
     })
 

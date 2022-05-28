@@ -1,5 +1,6 @@
 @import './_mixin.scss';
 @import './_variables.scss';
+
 $base-font-size:44px;
 $base-color:rgb(116, 204, 204);
 
@@ -12,6 +13,17 @@ $base-color:rgb(116, 204, 204);
 body{
     background-color: azure;
 }
+
+.container {
+  max-width: $mv + px;
+  margin: 0 auto;
+  @media (max-width: $md1) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2) {
+    max-width: 750px;
+  }
+}
 ul {
     list-style: none;
     li {
@@ -19,16 +31,5 @@ ul {
         text-decoration: none;
         color: #fff;
       }
-    }
   }
-  .container {
-    max-width: $mv + px;
-    margin: 0 auto;
-    width: 100%;
-    @media (max-width: $md1) {
-      max-width: 970px;
-    }
-    @media (max-width: $md2) {
-      max-width: 750px;
-    }
-  }
+}

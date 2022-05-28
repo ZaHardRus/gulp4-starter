@@ -1,6 +1,6 @@
 // X-Large devices (large desktops, less than 1400px)
 @mixin xlg {
-    @media(max-width: 1399.98px){
+    @media(min-width: 1200px){
         @content
     }
 };

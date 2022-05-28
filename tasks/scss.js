@@ -11,6 +11,7 @@ import sassComp from 'sass'
 import sassGlob from 'gulp-sass-glob'
 import webpCss from 'gulp-webp-css'
 import concat from 'gulp-concat';
+
 //Конфиг
 import path from '../config/path.js'
 import settings from "../config/settings.js";

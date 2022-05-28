@@ -1,32 +1,105 @@
-.modal__wrapper{
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(#1B1B1B,.95);
-    //display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    display: none;
-    .modal{
-      background-color: #1F1F1F;
-      padding: 25px;
-      border-radius: 16px;
-      height: 300px;
-      width: 350px;
-      &__title{
-        text-align: center;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 100%;
-        color:#fff;
-      }
-      &__close{
-        cursor: pointer;
-        display: flex;
-        justify-content: flex-end;
-      }
+.modal__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#1B1B1B, .95);
+  //display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  display: none;
+
+  .modal {
+    background-color: #1F1F1F;
+    padding: 25px;
+    border-radius: 16px;
+    min-height: 300px;
+    min-width: 450px;
+
+    &__title {
+      text-align: center;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      color: #fff;
+    }
+
+    &__close {
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-end;
     }
   }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    gap: 16px;
+    padding: 20px;
+
+    &__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 55px;
+      color: #FFFFFF;
+      margin-bottom: 35px;
+    }
+
+    &__subtitle {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 170%;
+      color: #FFFFFF;
+      margin-bottom: 50px;
+    }
+
+    &__input {
+      background-color: transparent;
+      height: 40px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      font-size: 16px;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 170%;
+        color: #f3f3f3;
+      }
+    }
+
+    &__textarea {
+      background-color: transparent;
+      height: 120px;
+      border: none;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      font-size: 24px;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 170%;
+        color: #f3f3f3;
+      }
+    }
+
+    &__btn {
+      //cursor: pointer;
+      align-self: end;
+      background-color: transparent;
+      border: none;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #FFFFFF;
+      z-index: 1;
+      cursor: none;
+    }
+  }
+}
